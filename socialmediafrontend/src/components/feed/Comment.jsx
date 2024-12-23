@@ -51,8 +51,8 @@ const Comment = ({postId}) => {
     <div>
       <p className="text-gray-800 font-semibold">Comments</p>
       <hr className="mt-2 mb-2" />
-      {comments.map((comment) => (
-        <div key={comment.id} className="flex items-center space-x-2 mt-2">
+      {comments.map((comment, index) => (
+        <div key={index} className="flex items-center space-x-2 mt-2">
           <div>
             <p className="text-gray-800 font-semibold">{comment.username}</p>
             <p className="text-gray-500 text-sm">{comment.content}</p>

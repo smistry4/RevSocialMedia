@@ -12,7 +12,6 @@ export const createPost = async (postData) => {
 }
 
 export const fetchFeed = async () => {
-    console.log("Access Token:", localStorage.getItem("token"));
     return await axios.get(`${API_BASE}/posts/feed`, {
         headers: {
             "Authorization": `Bearer ${localStorage.getItem("token")}`
