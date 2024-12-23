@@ -16,7 +16,9 @@ const Register = () => {
         try {
             const response = await registerUser({firstName, lastName, username, email, password});
             if (response.status >= 200 && response.status < 300) {
-              localStorage.setItem("token", response.headers["authorization"]);
+              const authorizationHeader = response.headers["authorization"];
+              const valueToStore = authorizationHeader.split(" ")[1];
+              localStorage.setItem("token", valueToStore);
               navigate("/feed")
             }
         } catch(err) {
