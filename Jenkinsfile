@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        JAVA_HOME = "/opt/jdk-21"
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
+    }
     stages {
         stage('Checkout') {
             steps {
